@@ -1,24 +1,36 @@
 import React from "react";
 import NameListItem from "./NameListItem";
+import Navbar from "./Navbar";
 
 function NameList (){
 
-    const namelist = {
+    const namelist = [{
         name:{
-            name: "John Doe",
+            fname: "John Doe",
             age: 30
         },
         location:{
             city: "New York",
             state: "NY"
         }
-        };
+        
+        },
+    {
+        name:{
+            fname: "Alexnader Piers",
+            age: 20
+        },
+        location:{
+            city: "Ragama",
+            state: "Western"
+        }
+    }];
     
     return (
         <div>
-            <h1>Name List</h1>
-            <hr />
-            <NameListItem name={namelist.name.name} game={namelist.location.city} />
+           <Navbar />
+            <NameListItem name={namelist[0].name.fname} game={namelist[0].location.city} />
+            <NameListItem name={namelist[1].name.fname} game={namelist[1].location.city} />
 
         </div>
     )
